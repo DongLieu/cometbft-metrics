@@ -1,6 +1,6 @@
 import csv
 
-titleEachHeight = ['height', 'numRound', 'numTx', 'blockSizeBytes', 'blockIntervalSeconds', 'blockParts', 'blockGossipPartsReceived', 'quorumPrevoteDelay', 'fullPrevoteDelay', 'proposalReceiveCount', 'proposalCreateCount']
+titleEachHeight = ['height', 'numRound', 'blockIntervalSeconds','numTx', 'blockSizeBytes', 'blockParts', 'blockGossipPartsReceived', 'quorumPrevoteDelay', 'fullPrevoteDelay', 'proposalReceiveCount', 'proposalCreateCount']
 titleEachVote = ['height', 'roundID', 'step', 'validatorsPower', 'missingValidatorsPowerPrevote']
 titleEachProposal = ['height', 'roundID', 'step', 'numblockParts', 'blockPartsReceived']
 titleEachTime = ['height', 'roundID', 'stepName', 'stepTime']
