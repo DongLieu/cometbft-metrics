@@ -31,7 +31,7 @@ y_pos = numpy.arange(len(titleRoundStep))
 plt.bar(y_pos, listTimeAvgs)
 plt.xticks(y_pos, titleRoundStep)
 
-axis.set_ylim(0,5)
+axis.set_ylim(0,0.1)
 
 plt.ylabel('second') 
 plt.title('trung bình thời gian của một block khi bị timeout')

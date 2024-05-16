@@ -5,6 +5,7 @@ titleEachVote = ['height', 'roundID', 'step', 'validatorsPower', 'missingValidat
 titleEachProposal = ['height', 'roundID', 'step', 'numblockParts', 'blockPartsReceived']
 titleEachTime = ['height', 'roundID', 'stepName', 'stepTime']
 titleEachP2P = ['height', 'roundID', 'step', 'fromPeer', 'toPeer', 'chID', 'msgType', 'size', 'rawByte']
+timeThreshold = 5.0
 
 def eachVote():
     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/blockVoteStep.csv'
