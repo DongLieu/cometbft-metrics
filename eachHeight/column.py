@@ -6,8 +6,8 @@ from csv_reader import *
 
 eachHeight = eachHeight()
 
-for x in range(len(eachHeight)):
-    eachHeight[x].append('0')
+# for x in range(len(eachHeight)):
+#     eachHeight[x].append('0')
 
 # titleEachHeight = ['height', 'numRound', 'blockIntervalSeconds','numTx', 'blockSizeBytes', 'blockParts', 'blockGossipPartsReceived', 'quorumPrevoteDelay', 'fullPrevoteDelay', 'proposalReceiveCount', 'proposalCreateCount']
 
@@ -92,8 +92,8 @@ rects1 = ax.bar(indices - width/2, blockShortAvg, width, label='block short', co
 rects2 = ax.bar(indices + width/2, blockLongAvg, width, label='block long', color='red')
 
 # Thêm các nhãn, tiêu đề và chú giải
-ax.set_xlabel('Obj')
-ax.set_ylabel('%')
+ax.set_xlabel('information field')
+ax.set_ylabel('point')
 ax.set_title('each hieght')
 ax.set_xticks(indices)
 ax.set_xticklabels(title)

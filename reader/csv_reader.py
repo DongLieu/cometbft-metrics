@@ -17,6 +17,7 @@ def eachHeight():
 
     return read_file(file_path)
 
+
 def eachProposal():
     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/data/cometbft-metrics/blockProposalStep.csv'
 
@@ -42,3 +43,13 @@ def read_file(path):
         data[x] = data[x].split(",")
      
     return data
+
+def heightTimeOut():
+    eachHeigh = eachHeight()
+    height_timeout = []
+
+    for x in eachHeigh:
+        if float(x[2]) > timeThreshold:
+            height_timeout.append(x[0])
+
+    return height_timeout
