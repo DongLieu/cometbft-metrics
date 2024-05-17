@@ -8,27 +8,27 @@ titleEachP2P = ['height', 'roundID', 'step', 'fromPeer', 'toPeer', 'chID', 'msgT
 timeThreshold = 5.0
 
 def eachVote():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/blockVoteStep.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/data/cometbft-metrics/blockVoteStep.csv'
 
     return read_file(file_path)
 
 def eachHeight():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/block.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/data/cometbft-metrics/block.csv'
 
     return read_file(file_path)
 
 def eachProposal():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/blockProposalStep.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/data/cometbft-metrics/blockProposalStep.csv'
 
     return read_file(file_path)
 
 def eachTimeStep():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/blockOnlyTimeStep.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/data/cometbft-metrics/blockOnlyTimeStep.csv'
 
     return read_file(file_path)
 
 def eachP2P():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/blockP2P.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/reader/data/cometbft-metrics/blockP2P.csv'
 
     return read_file(file_path)
 
