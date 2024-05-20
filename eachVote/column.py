@@ -7,6 +7,7 @@ from csv_reader import *
 
 pros = eachVote()
 hieght_outime = heightTimeOut()
+print(hieght_outime)
 # print(hieght_outime)
 validatorsPower_timeout      = 0
 missingValidatorsPowerPrevote_timeout = 0
