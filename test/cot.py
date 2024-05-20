@@ -31,8 +31,6 @@ import numpy
 
 figure, axis = plt.subplots()
 
-
-
 y_pos = numpy.arange(len(subject))
 
 plt.bar(y_pos, not_take_exam_percen)
@@ -49,8 +47,4 @@ for rect,labe1 in zip(rects, not_take_exam):
 	height = rect.get_height()
 	axis.text(rect.get_x() + rect.get_width() / 2, height + 5, labe1, ha='center', va='bottom')
 	
-print(axis)
-print(rects)
-print(rect.get_x())
-print(rect.get_width())
 plt.show()
