@@ -1,5 +1,5 @@
 def eachHeight():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/valid/block.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/absurd/block.csv'
 
     return read_file(file_path)
 
@@ -40,11 +40,11 @@ def write_file(path_file, data):
 
 def heightTimeOut():
     eachHeigh = eachHeight()
-    eachVotes = eachTime()
+    eachVotes = eachPro()
     for x in eachHeigh:
         for y in eachVotes:
             if x[0] == y[0]:
-                write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/valid/blockOnlyTimeStep.csv", y)
+                write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/absurd/blockProposalStep.csv", y)
             
 
         
