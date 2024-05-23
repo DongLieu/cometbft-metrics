@@ -28,6 +28,6 @@ def heightTimeOut():
             height_timeout.append(x[0])
     print(max)
     return height_timeout
-
+# 1.520132042+0.002022702+2.937912053+0.088719586+0.637672203+0.05429426
 
 print(heightTimeOut())
