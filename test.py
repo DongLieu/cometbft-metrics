@@ -1,5 +1,5 @@
 def eachHeight():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/old_data/data3/cometbft-metrics/block.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/old_data/data5/block.csv'
 
     return read_file(file_path)
 
@@ -19,6 +19,7 @@ def heightTimeOut():
     height_timeout = []
     max = 0
     for x in eachHeigh:
+        # print(x)
         if float(x[2]) > max:
             max = float(x[2])
 
