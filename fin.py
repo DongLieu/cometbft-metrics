@@ -1,5 +1,5 @@
 def eachHeight():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/block.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/valid/block.csv'
 
     return read_file(file_path)
 
@@ -33,10 +33,7 @@ def read_file(path):
 import csv
 
 def write_file(path_file, data):
-    # data = [70917290, 1, 0.408425436, 4, 9948, 2048, 5, 0.05217152, 0.269370465, 1, 0]
-    # for data in datas:
     with open(path_file, 'a', newline='') as csvfile:
-        # Tạo writer object
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(data)
 
@@ -45,23 +42,9 @@ def heightTimeOut():
     eachHeigh = eachHeight()
     eachVotes = eachTime()
     for x in eachHeigh:
-        sum = 0
         for y in eachVotes:
             if x[0] == y[0]:
-                sum += float(y[3])
-        
-        if x[0]=="70936284":
-            print(sum)
-            print(x)
-            print(x[3])
-            print(abs(float(x[2]) ))
-            print(abs(float(x[2]) - sum))
-
-
-        if abs(float(x[2]) - sum) > 0.1:
-            write_file("/Users/donglieu/52024/injective/cometbft-metrics/ttt.csv", x)
-        else:
-            write_file("/Users/donglieu/52024/injective/cometbft-metrics/ppp.csv", x)
+                write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/valid/blockOnlyTimeStep.csv", y)
             
 
         
