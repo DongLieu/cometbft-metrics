@@ -8,7 +8,6 @@ def eachTime():
 
     return read_file(file_path)
 
-
 def eachPro():
     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/old_data/data1/data/blockProposalStep.csv'
 
@@ -18,8 +17,6 @@ def eachVote():
     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/old_data/data1/data/blockVoteStep.csv'
 
     return read_file(file_path)
-
-
 
 def read_file(path):
     file = open(path, "r")
@@ -42,12 +39,10 @@ def write_file(path_file, data):
         csvwriter = csv.writer(csvfile)
         csvwriter.writerow(data)
 
-
 def heightTimeOut():
     eachHeigh = eachHeight()
     eachVotes = eachVote()
     height_timeout = []
-
     for x in eachHeigh:
         for y in eachVotes:
             if y[0] == x[0]:
@@ -56,9 +51,6 @@ def heightTimeOut():
 
         # write_file("/Users/donglieu/52024/injective/cometbft-metrics/ttt.csv", x)
 
-        
-
     return height_timeout
-
 
 heightTimeOut()
