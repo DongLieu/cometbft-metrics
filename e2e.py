@@ -1,10 +1,10 @@
 def eachHeight():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/old_data/data1/data/block.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/block.csv'
 
     return read_file(file_path)
 
 def eachTime():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/old_data/data5/blockOnlyTimeStep.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/old_data/data1/data/blockOnlyTimeStep.csv'
 
     return read_file(file_path)
 
@@ -35,23 +35,18 @@ def heightTimeOut():
     eachHeigh = eachHeight()
     eachTimes = eachTime()
     height_timeout = []
-    max = 0
+
     for x in eachHeigh:
-        if x[-1] == "0" and x[-2] == "0" and x[-3] == "0" and x[-4] == "0":
-            continue
+        for y in eachTimes:
+            if y[0] == x[0]:
+                write_file("/Users/donglieu/52024/injective/cometbft-metrics/ttt.csv", y)
+            
 
-        if float(x[2]) > max:
-            max = float(x[2])
-
-        if float(x[2]) > 2.7:
-            height_timeout.append(x[0])
-
-        write_file("/Users/donglieu/52024/injective/cometbft-metrics/ttt.csv", x)
+        # write_file("/Users/donglieu/52024/injective/cometbft-metrics/ttt.csv", x)
 
         
-    print(max)
+
     return height_timeout
 
 
-
-print(heightTimeOut())
+heightTimeOut()
