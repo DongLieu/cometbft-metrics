@@ -23,7 +23,8 @@ def heightTimeOut():
         if float(x[2]) > max:
             max = float(x[2])
 
-        if float(x[2]) > 3 and float(x[2]) < 5:
+        # if float(x[2]) > 3 and float(x[2]) < 5:
+        if float(x[2]) > 5:
             height_timeout.append(x[0])
     print(max)
     return height_timeout
