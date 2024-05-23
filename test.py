@@ -1,5 +1,5 @@
 def eachHeight():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/block.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/valid/block.csv'
 
     return read_file(file_path)
 
