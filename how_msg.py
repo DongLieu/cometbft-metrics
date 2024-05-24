@@ -14,18 +14,34 @@ def read_file(path):
      
     return data
 
-def heightTimeOut():
-    eachHeigh = eachP2P()
-    x_from = 0
-    receive = 0
-    for x in eachHeigh:
-        if x[3] == "":
-            x_from +=1
-    
-    receive = len(eachHeigh)-x_from
-    print(x_from)
-    print(receive)
-            
-        
-# 1.520132042+0.002022702+2.937912053+0.088719586+0.637672203+0.05429426
-heightTimeOut()
+
+eachHeigh = eachP2P()
+x_from = 0
+receive = 0
+types = []
+counts = {}
+for x in eachHeigh:
+    if x[3] == "":
+        x_from +=1
+    if x[6] in types:
+        counts[x[6]] += 1
+    else:
+        counts[x[6]] = 1
+        types.append(x[6])
+
+receive = len(eachHeigh)-x_from
+print("send",x_from)
+print("receive", receive)
+print(types)
+print(counts)
+                
+import matplotlib.pyplot as plt
+
+
+fig1, ax1 = plt.subplots()
+ax1.pie(counts.values(), labels=counts.keys(), autopct='%1.1f%%', startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+plt.show()
+
+
