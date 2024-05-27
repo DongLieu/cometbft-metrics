@@ -44,7 +44,7 @@ def heightTimeOut():
     for x in eachHeigh:
         for y in eachVotes:
             if x[0] == y[0]:
-                write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/valid/blockProposalStep.csv", y)
+                write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/valid/blockProposalStep1.csv", y)
             
 
 

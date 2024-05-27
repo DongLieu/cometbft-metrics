@@ -1,5 +1,9 @@
 def eachP2P():
-    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/blockP2P1.csv'
+    file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockP2P1.csv'
+    # file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockP2P2.csv'
+    # file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockP2P3.csv'
+    # file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockP2P4.csv'
+    # file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockP2P5.csv'
 
     return read_file(file_path)
 
