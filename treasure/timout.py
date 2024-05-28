@@ -11,5 +11,5 @@ pro = eachProposal()
 
 height = eachHeight()
 
-for i in heghtTimeout:
-    if time[0] == i[]:
+# for i in heghtTimeout:
+#     if time[0] == i[]:
