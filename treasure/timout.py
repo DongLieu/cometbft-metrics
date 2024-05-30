@@ -1,7 +1,7 @@
 from check_height import *
 from csv_reader import *
 
-heghtTimeout = heightTimeOutFromPath("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7/block.csv")
+heghtTimeout = heightTimeOutFromPath("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7" + "/block.csv")
 
 time = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7" + "/blockOnlyTimeStep.csv")
 
