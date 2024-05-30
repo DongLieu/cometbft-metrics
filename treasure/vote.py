@@ -13,13 +13,13 @@ stepMissPowre = {}
 for x in timesteps:
     for y in heightTimeOuts:
         if x[0] == y:
-            if x[2] in stepName:
-                stepPower[x[2]] += float(x[3])
-                stepMissPowre[x[2]] += float(x[4])
+            if x[3] in stepName:
+                stepPower[x[3]] += float(x[3])
+                stepMissPowre[x[3]] += float(x[4])
             else:
-                stepName.append(x[2])
-                stepPower[x[2]] = float(x[3])
-                stepMissPowre[x[2]] = float(x[4])
+                stepName.append(x[3])
+                stepPower[x[3]] = float(x[3])
+                stepMissPowre[x[3]] = float(x[4])
 
 
 valu1 = [i/len(heightTimeOuts) for i in stepPower.values()]

@@ -49,11 +49,17 @@ def heightTimeOut():
     height_timeout = []
     max = 0
     for x in eachHeigh:
-        if float(x[2]) > max:
-            max = float(x[2])
+        if float(x[3]) > max:
+            max = float(x[3])
 
-        if float(x[2]) > timeThreshold:
+        if float(x[3]) > timeThreshold:
             height_timeout.append(x[0])
 
     # print(max)
     return height_timeout
+
+
+def write_file(path_file, data):
+    with open(path_file, 'a', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(data)

@@ -21,19 +21,19 @@ blockPartsReceived = {}
 for x in timesteps:
     for y in a:
         if x[0] == y[0]:
-            if x[2] in stepName:
+            if x[3] in stepName:
                 if x[3] != 0:
-                    numblockParts[x[2]] += float(x[3])
+                    numblockParts[x[3]] += float(x[3])
                 else:
-                    numblockParts[x[2]] += float(y[5])
-                blockPartsReceived[x[2]] += float(x[4])
+                    numblockParts[x[3]] += float(y[5])
+                blockPartsReceived[x[3]] += float(x[4])
             else:
-                stepName.append(x[2])
+                stepName.append(x[3])
                 if x[3] != 0:
-                    numblockParts[x[2]] = float(x[3])
+                    numblockParts[x[3]] = float(x[3])
                 else:
-                    numblockParts[x[2]] = float(y[5])
-                blockPartsReceived[x[2]] = float(x[4])
+                    numblockParts[x[3]] = float(y[5])
+                blockPartsReceived[x[3]] = float(x[4])
 
 
 valu1 = [i/len(heightTimeOuts) for i in numblockParts.values()]

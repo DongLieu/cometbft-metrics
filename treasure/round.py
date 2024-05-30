@@ -12,11 +12,11 @@ timeStep = {}
 for x in timesteps:
     for y in heightTimeOuts:
         if x[0] == y:
-            if x[2] in typeStep:
-                timeStep[x[2]] += float(x[3])
+            if x[3] in typeStep:
+                timeStep[x[3]] += float(x[3])
             else:
-                typeStep.append(x[2])
-                timeStep[x[2]] = float(x[3])
+                typeStep.append(x[3])
+                timeStep[x[3]] = float(x[3])
 print(typeStep)
 print(timeStep)
 

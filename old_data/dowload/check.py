@@ -21,11 +21,11 @@ def heightTimeOut():
     for x in eachHeigh:
         # print(x)
         if len(x) <2:continue
-        if float(x[2]) > max:
-            max = float(x[2])
+        if float(x[3]) > max:
+            max = float(x[3])
 
         # if float(x[2]) > 3 and float(x[2]) < 5:
-        if float(x[2]) > 5:
+        if float(x[3]) > 5:
             height_timeout.append(x[0])
     print(max)
     return height_timeout
