@@ -4,10 +4,15 @@ def heightsTimeOut(file_path):
     eachHeigh = read_file(file_path + "/block.csv")
     heightimeouts = []
     max = 0
+    hightContinue = []
     for x in eachHeigh:
         # print(x)
-        if x[0] == "0":continue
-        if x[-1] == "0" and x[-2] == "0" and x[-3] == "0" and x[-4] == "0":continue
+        if x[0] == "0":
+            hightContinue.append(x[0])
+            continue
+        if x[-1] == "0" and x[-2] == "0" and x[-3] == "0" and x[-4] == "0":
+            hightContinue.append(x[0])
+            continue
         if float(x[3]) > max:
             max = float(x[3])
 
@@ -20,7 +25,8 @@ def heightsTimeOut(file_path):
     top = "0"
     sum = float(0)
     for i in times:
-        if i[0] in heightimeouts:continue
+        if i[0] in heightimeouts or i[0] in hightContinue:
+            continue
         if top == i[0]:
             sum += float(i[4])
         else:
