@@ -1,6 +1,6 @@
 from treasure.check_height import *
 
-heightTimeOuts = heightTimeOut()
+heightTimeOuts = heightsTimeOut("/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/block.csv")
 hi = []
 
 # onlytime
