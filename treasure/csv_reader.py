@@ -65,19 +65,19 @@ def write_file(path_file, data):
         csvwriter.writerow(data)
 
 
-def heightTimeOutFromPath(file_path):
-    eachHeigh = read_file(file_path)
-    height_timeout = []
-    max = 0
-    for x in eachHeigh:
-        # print(x)
-        if x[0] == "0":continue
-        if x[-1] == "0" and x[-2] == "0" and x[-3] == "0" and x[-4] == "0":continue
-        if float(x[3]) > max:
-            max = float(x[3])
+# def heightTimeOutFromPath(file_path):
+#     eachHeigh = read_file(file_path)
+#     height_timeout = []
+#     max = 0
+#     for x in eachHeigh:
+#         # print(x)
+#         if x[0] == "0":continue
+#         if x[-1] == "0" and x[-2] == "0" and x[-3] == "0" and x[-4] == "0":continue
+#         if float(x[3]) > max:
+#             max = float(x[3])
 
-        # if float(x[2]) > 3 and float(x[2]) < 5:
-        if float(x[3]) > 5:
-            height_timeout.append(x[0])
-    print(max)
-    return height_timeout
+#         # if float(x[2]) > 3 and float(x[2]) < 5:
+#         if float(x[3]) > 5:
+#             height_timeout.append(x[0])
+#     print(max)
+#     return height_timeout
