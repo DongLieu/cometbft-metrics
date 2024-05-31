@@ -1,10 +1,11 @@
 import csv
 
-titleEachHeight = ['height', 'numRound', 'blockIntervalSeconds','numTx', 'blockSizeBytes', 'blockParts', 'blockGossipPartsReceived', 'quorumPrevoteDelay', 'fullPrevoteDelay', 'proposalReceiveCount', 'proposalCreateCount']
-titleEachVote = ['height', 'roundID', 'step', 'validatorsPower', 'missingValidatorsPowerPrevote']
-titleEachProposal = ['height', 'roundID', 'step', 'numblockParts', 'blockPartsReceived']
-titleEachTime = ['height', 'roundID', 'stepName', 'stepTime']
-titleEachP2P = ['height', 'roundID', 'step', 'fromPeer', 'toPeer', 'chID', 'msgType', 'size', 'rawByte']
+titleEachHeight = ['height','islongblock', 'numRound', 'blockIntervalSeconds','numTx', 'blockSizeBytes', 'blockParts', 'blockGossipPartsReceived', 'quorumPrevoteDelay', 'fullPrevoteDelay', 'proposalReceiveCount', 'proposalCreateCount']
+titleEachVote = ['height','islongblock', 'roundID', 'step', 'numVoteReceived','numVoteSent','missingValidatorsPowerPrevote','validatorsPower']
+titleEachProposal = ['height','islongblock', 'roundID', 'blockSize','numTxs','blockPartsSend', 'blockPartsReceived', 'numblockParts']
+titleEachTime = ['height','islongblock', 'roundID', 'stepName', 'stepTime']
+titleEachP2P = ['height','islongblock', 'roundID', 'step', 'fromPeer', 'toPeer', 'chID', 'msgType', 'size', 'rawByte', 'content']
+titleVoteSet = ['height','islongblock', 'roundID', 'type', 'blockID', "time", "valAddress", "indexVal", 'signatureByte']
 timeThreshold = 5.0
 
 def eachVote():
@@ -16,7 +17,6 @@ def eachHeight():
     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/block.csv'
 
     return read_file(file_path)
-
 
 def eachProposal():
     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockProposalStep.csv'
