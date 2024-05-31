@@ -1,38 +1,42 @@
 from check_height import *
 from csv_reader import *
 
-heghtTimeout = heightTimeOutFromPath("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7" + "/block.csv")
+heghtTimeouts = heightTimeOutFromPath("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7/cometbft-metrics" + "/block.csv")
 
-time = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7" + "/blockOnlyTimeStep.csv")
+time = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7/cometbft-metrics" + "/blockOnlyTimeStep.csv")
 
-vote = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7" + "/blockVoteStep.csv")
+vote = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7/cometbft-metrics" + "/blockVoteStep.csv")
 
-pros = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7" + "/blockProposalStep.csv")
+pros = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7/cometbft-metrics" + "/blockProposalStep.csv")
 
-heig = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7" + "/block.csv")
+heig = read_file("/Users/donglieu/52024/injective/cometbft-metrics/old_data/data7/cometbft-metrics" + "/block.csv")
 
 def writeCSVTIME():
     for i in time:
-        if i[0] in heightTimeOut:
+        if i[0] in heghtTimeouts:
             # write
             write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/newblocktimeout-305/time.csv", i)
 
 def writeCSVVOTE():
     for i in vote:
-        if i[0] in heightTimeOut:
+        if i[0] in heghtTimeouts:
             # write
             write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/newblocktimeout-305/vote.csv", i)
 
 def writeCSVpro():
     for i in pros:
-        if i[0] in heightTimeOut:
+        if i[0] in heghtTimeouts:
             # write
             write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/newblocktimeout-305/pro.csv", i)
 
 
 def writeCSVheight():
     for i in heig:
-        if i[0] in heightTimeOut:
+        if i[0] in heghtTimeouts:
             # write
             write_file("/Users/donglieu/52024/injective/cometbft-metrics/treasure/newblocktimeout-305/block.csv", i)
 
+writeCSVTIME()
+writeCSVVOTE()
+writeCSVpro()
+writeCSVheight()
