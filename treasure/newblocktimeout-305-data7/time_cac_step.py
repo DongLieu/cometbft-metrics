@@ -52,3 +52,13 @@ for rect,labe1 in zip(rects, values):
 	axis.text(rect.get_x() + rect.get_width() / 2, height + 0, labe1, ha='center', va='bottom')
 	
 plt.show()
+
+# import matplotlib.pyplot as plt
+
+
+# fig1, ax1 = plt.subplots()
+# ax1.pie(timeStep.values(), labels=timeStep.keys(), autopct='%1.1f%%', startangle=90)
+# ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+# plt.show()
+
