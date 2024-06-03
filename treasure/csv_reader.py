@@ -8,31 +8,6 @@ titleEachP2P = ['height','islongblock', 'roundID', 'step', 'fromPeer', 'toPeer',
 titleVoteSet = ['height','islongblock', 'roundID', 'type', 'blockID', "time", "valAddress", "indexVal", 'signatureByte']
 timeThreshold = 5.0
 
-# def eachVote():
-#     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockVoteStep.csv'
-
-#     return read_file(file_path)
-
-# def eachHeight():
-#     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/block.csv'
-
-#     return read_file(file_path)
-
-# def eachProposal():
-#     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockProposalStep.csv'
-
-#     return read_file(file_path)
-
-# def eachTimeStep():
-#     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockOnlyTimeStep.csv'
-
-#     return read_file(file_path)
-
-# def eachP2P():
-#     file_path = '/Users/donglieu/52024/injective/cometbft-metrics/treasure/gen/blockP2P.csv'
-
-#     return read_file(file_path)
-
 def read_file(path):
     file = open(path, "r")
 
