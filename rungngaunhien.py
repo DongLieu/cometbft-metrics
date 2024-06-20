@@ -45,7 +45,7 @@ def read_file(path):
 # 11:'TotalmissingValidatorsPowerPrevote', 
 # 12: "ToTalblockPartsReceived"
 #Y: # 0:"blockIntervalSeconds"
-X, Y = read_file("/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train.csv")
+X, Y = read_file("/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train3.csv")
 
 # data split
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)

@@ -19,14 +19,15 @@ def read_file(path, toPath):
      
     for i in data:
         if float(i[1]) <2 and float(i[0]) >4:
+            print(i)
             continue
 
-        if float(i[1]) >=2 and float(i[0]) <3.5:
+        if float(i[1]) >=1.9 and float(i[0]) <3.5:
+            print(i)
             continue
 
         write_file(toPath, i)
 
-# read_file("/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train.csv", "/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train2.csv")
+read_file("/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train.csv", "/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train3.csv")
 
-# start = 0; end = len(data)
 

@@ -33,8 +33,6 @@ def read_file(path):
     for i in range(len(data)):
         Y[i] = float(data[i][0])
         X[i] = float(data[i][1])
-        if float(data[i][1]) <2 and float(data[i][0]) >3:
-            print(data[i])
         
     return X, Y
 

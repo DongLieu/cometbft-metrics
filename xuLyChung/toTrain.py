@@ -34,13 +34,14 @@ def layData(dirPath, longShort):
             # 0,            1,      2,                  3,              4,                          5,                  6,                      7,                      8
             # "numRound", "numTx", "blockSizeBytes", "blockParts", "blockGossipPartsReceived", 'quorumPrevoteDelay', 'fullPrevoteDelay', 'proposalReceiveCount', 'proposalCreateCount'
             tmp.append(round(float(i[3]), 3))
-            flag = 0
+
+            # numroungd
             roundnum = 1 
-            for j in times:
+            m = seachData(0, len(times), i[0] ,times)
+            for j in times[m-10:m+10]:
                 if j[0] == i[0]:
-                    flag = 1
                     roundnum = 1+int(j[2])
-                if flag == 1 and j[0] != i[0]:break
+
             tmp.append(float(roundnum))
             # tmp.append(float(i[2]))
             tmp.append(float(i[4]))
@@ -58,14 +59,12 @@ def layData(dirPath, longShort):
             vote4 =0
             vote5 =0
             vote6 =0
-            flag = 0
-            for j in votes:
+            m = seachData(0, len(votes), i[0] ,votes)
+            for j in votes[m-10:m+10]:
                 if j[0] == i[0]:
                     vote4 += float(j[4])
                     vote5 += float(j[5])
                     vote6 += float(j[6])
-                    flag = 1
-                if flag == 1 and j[0] > i[0]:break
 
             tmp.append(vote4)
             tmp.append(vote5)
@@ -73,12 +72,10 @@ def layData(dirPath, longShort):
 
             # PRO :6 "ToTalblockPartsReceived"
             pro6 = 0
-            flag2 = 0
-            for j in pros:
+            m = seachData(0, len(votes), i[0] ,votes)
+            for j in pros[m-10:m+10]:
                 if j[0] == i[0]:
                     pro6 += float(j[6])
-                    flag2 = 1
-                if flag2 == 1 and j[0] > i[0]:break
                 
             tmp.append(pro6)
             csvwriter.writerow(tmp)
@@ -92,11 +89,3 @@ def seachData(start, end, h, datas):
         return seachData(start, mid, h, datas)
 
     return seachData(mid, end, h, datas)
-
-datas = read_file("/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/blockOnlyTimeStep.csv")
-
-m = seachData(0, len(datas), "74185232" ,datas)
-
-print(m)
-for j in datas[m-10:m+10]:
-    print(j)
