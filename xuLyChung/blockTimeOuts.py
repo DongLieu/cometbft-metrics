@@ -32,7 +32,7 @@ def heightsTimeOut(file_path):
                 heightimeouts.remove(i[0])
                 hightContinue.append(i[0])
         else:
-            if i[3] == "NewHeight" or i[3] == "Commit":
+            if (i[0] in xs.keys()) and (i[3] == "NewHeight" or i[3] == "Commit"):
                 if float(i[4]) > 0.8 * xs[i[0]]:
                     hightContinue.append(i[0])
 
