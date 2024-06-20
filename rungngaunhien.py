@@ -64,7 +64,7 @@ importance_df = pd.DataFrame({'Feature': features, 'Importance': feature_importa
 importance_df = importance_df.sort_values(by='Importance', ascending=False)
 
 # Lưu mô hình đã huấn luyện
-joblib.dump(model, 'random_forest_model.joblib')
+# joblib.dump(model, 'random_forest_model.joblib')
 
 # Plot feature importances
 plt.figure(figsize=(10, 6))
