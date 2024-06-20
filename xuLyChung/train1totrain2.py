@@ -18,7 +18,7 @@ def read_file(path, toPath):
         data[x] = data[x].split(",")
      
     for i in data:
-        if float(i[1]) <2 and float(i[0]) >4:
+        if float(i[1]) <2 and float(i[0]) >3.5 and float(i[2]) < 40:
             print(i)
             continue
 
@@ -28,6 +28,6 @@ def read_file(path, toPath):
 
         write_file(toPath, i)
 
-read_file("/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train.csv", "/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train3.csv")
+read_file("/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/train.csv", "/Users/donglieu/62024/injective/cometbft-metrics/old_data/data12/cometbft-metrics/train/_train.csv")
 
 

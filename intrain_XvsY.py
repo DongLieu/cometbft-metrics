@@ -16,7 +16,7 @@ import numpy as np
 # 13: "ToTalblockPartsReceived"
 
 def read_file(path):
-    path = path + "/cometbft-metrics/train/train.csv"
+    path = path + "/cometbft-metrics/train/_train.csv"
     file = open(path, "r")
 
     data = file.read().split("\n")
@@ -33,6 +33,8 @@ def read_file(path):
     for i in range(len(data)):
         Y[i] = float(data[i][0])
         X[i] = float(data[i][1])
+        # if float(data[i][1]) < 2 and float(data[i][0]) > 3.5:
+        #     print(float(data[i][0]))
         
     return X, Y
 

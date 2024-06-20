@@ -37,7 +37,9 @@ def layData(dirPath, longShort):
 
             # numroungd
             roundnum = 1 
-            m = seachData(0, len(times), i[0] ,times)
+            m = seachData(0, len(times)-1, i[0] ,times)
+            if m == -1: continue
+            if m < 10: m =10
             for j in times[m-10:m+10]:
                 if j[0] == i[0]:
                     roundnum = 1+int(j[2])
@@ -59,7 +61,9 @@ def layData(dirPath, longShort):
             vote4 =0
             vote5 =0
             vote6 =0
-            m = seachData(0, len(votes), i[0] ,votes)
+            m = seachData(0, len(votes)-1, i[0] ,votes)
+            if m == -1: continue
+            if m < 10: m = 10
             for j in votes[m-10:m+10]:
                 if j[0] == i[0]:
                     vote4 += float(j[4])
@@ -72,16 +76,28 @@ def layData(dirPath, longShort):
 
             # PRO :6 "ToTalblockPartsReceived"
             pro6 = 0
-            m = seachData(0, len(votes), i[0] ,votes)
+            m = seachData(0, len(pros)-1, i[0] ,pros)
+            if m == -1: continue
+            if m < 10: m = 10
             for j in pros[m-10:m+10]:
                 if j[0] == i[0]:
                     pro6 += float(j[6])
-                
+            if i[0] == "73679932": print(pro6)
             tmp.append(pro6)
             csvwriter.writerow(tmp)
             # write_file(dirPath + "/train/train.csv", tmp)
 
 def seachData(start, end, h, datas):
+    if start + 1 == end: 
+        # print(h)
+        return -1
+    # if h == "73679968":
+    #     print(start)
+    # print(h)
+    if datas[start][0] == h:
+        return start
+    if datas[end][0] == h:
+        return end
     mid = int((start+end)/2)
     if datas[mid][0] == h:
         return mid
