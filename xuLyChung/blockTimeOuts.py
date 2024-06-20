@@ -7,6 +7,7 @@ def heightsTimeOut(file_path):
     maxTime = 0
     hightContinue = []
     for x in eachHeigh:
+        xs[x[0]] = float(x[3])
         # print(x)
         if x[0] == "0":
             hightContinue.append(x[0])
@@ -19,7 +20,7 @@ def heightsTimeOut(file_path):
 
         if float(x[3]) > 5:
             heightimeouts.append(x[0])
-            xs[x[0]] = float(x[3])
+            
 
     times = read_file(file_path + "/blockOnlyTimeStep.csv")
     top = "0"
@@ -28,11 +29,12 @@ def heightsTimeOut(file_path):
         if i[0] in heightimeouts:
            if i[3] == "NewHeight" or i[3] == "Commit":
             if float(i[4]) > 0.8 * xs[i[0]]:
-                # print(i[0])
                 heightimeouts.remove(i[0])
                 hightContinue.append(i[0])
-            # else:
-            #     print(i, 0.7 * xs[i[0]])
+        else:
+            if i[3] == "NewHeight" or i[3] == "Commit":
+                if float(i[4]) > 0.8 * xs[i[0]]:
+                    hightContinue.append(i[0])
 
     for i in heightimeouts:
         if maxTime < xs[i]:

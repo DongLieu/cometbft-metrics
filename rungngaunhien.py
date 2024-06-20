@@ -21,6 +21,8 @@ def read_file(path):
     Y = np.random.rand(len(data), 1) * 10.1  
 
     for i in range(len(data)):
+        if float(data[i][1]) <2 and float(data[i][0]) >4:
+            continue
         Y[i] = float(data[i][0])
         for j in range(len(data[0]) - 1):
             X[i][j] = float(data[i][j+1])
